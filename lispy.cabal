@@ -53,14 +53,21 @@ executable lispy
   main-is:             Main.hs
 
   -- Modules included in this executable, other than Main.
-  -- other-modules:
+  other-modules:     Lispy.Parsing.Types
+                   , Lispy.Parsing.Expr
+                   , Lispy.Parsing.Lexer
+                   , Lispy.Parsing.AST
+                   , Lispy.PrettyPrinter
 
   -- LANGUAGE extensions used by modules in this package.
   -- other-extensions:
 
   -- Other library packages from which modules are imported.
   build-depends:       base >=4.12 && <4.13
-                       , megaparsec
+                     , megaparsec
+                     , free
+                     , containers
+                     , ansi-wl-pprint
 
   -- Directories containing source files.
   hs-source-dirs:      src
